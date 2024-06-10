@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:03:16 by etornay-          #+#    #+#             */
-/*   Updated: 2024/06/05 17:57:15 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/06/10 14:38:09 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main(void)
 {
+	PhoneBook	phonebook;
 	std::string str;
 
 	while (str != "EXIT")
@@ -31,9 +32,9 @@ int main(void)
 		for (int i = 0; i < (int)str.length(); i++)
 			str[i] = std::toupper(str[i]);
 		if (str == "ADD")
-			std::cout << std::endl << "Un nabo" << std::endl;
+			phonebook.addContact();
 		if (str == "SEARCH")
-			std::cout << std::endl << "Otro nabo" << std::endl;
+			phonebook.searchContact();
 		if (str == "EXIT")
 		{
 			std::cout << std::endl << "Thx for using Phonebook!" << std::endl << std::endl;

@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:36:36 by etornay-          #+#    #+#             */
-/*   Updated: 2024/06/06 14:03:55 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/06/10 14:27:12 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,22 @@ class Contact
 		std::string FirstName;
 		std::string LastName;
 		std::string Nickname;
-		int			PhoneNumber;
+		std::string PhoneNumber;
 		std::string DarkestSecret;
+		int			index;
 	
 	public:
 		Contact(void);
+		Contact(std::string FirstName, std::string LastName,
+			std::string Nickname, std::string PhoneNumber, std::string DarkestSecret);
 		~Contact(void);
 		std::string	getFirstName();
 		std::string	getLastName();
 		std::string	getNickname();
-		int			getPhoneNumber();
+		std::string getPhoneNumber();
 		std::string	getDarkestSecret();
+		int			getIndex(int index);
+		void		setIndex(int index);
 		void		add();
 		void		search();
 		void		exit();

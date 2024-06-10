@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:37:34 by etornay-          #+#    #+#             */
-/*   Updated: 2024/06/06 14:07:53 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/06/10 14:27:57 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ std::string	Contact::getNickname()
 {
 	return this->Nickname;
 }
-int	Contact::getPhoneNumber()
+std::string	Contact::getPhoneNumber()
 {
 	return this->PhoneNumber;
 }

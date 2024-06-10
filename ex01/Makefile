@@ -10,7 +10,9 @@ RESET	=\033[0m
 
 NAME =	phonebook
 
-SRC =	main.cpp
+SRC =	main.cpp \
+		PhoneBook.cpp \
+		Contact.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC = clang++
