@@ -6,14 +6,14 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:24:29 by etornay-          #+#    #+#             */
-/*   Updated: 2024/06/06 14:03:41 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/06/11 19:07:51 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 # include <iostream>
-# include <cstring>
+# include <cstdlib>
 # include "Contact.hpp"
 
 class	PhoneBook

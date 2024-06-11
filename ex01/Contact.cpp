@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:37:34 by etornay-          #+#    #+#             */
-/*   Updated: 2024/06/10 14:27:57 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:29:03 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {
+}
+
+Contact::Contact(std::string FirstName, std::string LastName,
+			std::string Nickname, std::string PhoneNumber, std::string DarkestSecret)
+{
+	this->FirstName = FirstName;
+	this->LastName = LastName;
+	this->Nickname = Nickname;
+	this->PhoneNumber = PhoneNumber;
+	this->DarkestSecret = DarkestSecret;
 }
 
 std::string Contact::getFirstName()
@@ -40,4 +50,17 @@ std::string	Contact::getPhoneNumber()
 std::string	Contact::getDarkestSecret()
 {
 	return this->DarkestSecret;
+}
+
+int (Contact::getIndex(int index))
+{
+	if (index == this->index)
+		return this->index;
+	else
+		return (0);
+}
+
+void (Contact::setIndex(int index))
+{
+	this->index = index;
 }
