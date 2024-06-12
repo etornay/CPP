@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 17:30:29 by etornay-          #+#    #+#             */
-/*   Updated: 2024/06/11 19:32:15 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:22:08 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	PhoneBook::addContact(void)
 	std::string phone;
 	std::string secret;
 
-	if (this->index >= 8)
+	if (this->index > 7)
 	{
 		std::cout << "You will delete " << this->contacts[this->index % 8].getFirstName() << ", continue to execute it." << std::endl;
 	}
@@ -60,6 +60,12 @@ void	PhoneBook::addContact(void)
 			break;
 		std::cout << "Enter phone number: ";
 		std::getline(std::cin, phone);
+		while (!this->isDigit(phone))
+		{
+			std::cout << std::endl << "Only numbers allowed. Please insert numbers for a Phone Number." << std::endl << std::endl;
+			std::cout << "Enter phone number: ";
+			std::getline(std::cin, phone);
+		}	
 	}
 	while (secret.empty())
 	{
@@ -78,11 +84,11 @@ void	PhoneBook::searchContact(void)
 {
 	std::string str;
 	size_t		len;
-	int			index = 0;
+	int			index;
 	Contact		c;
 
-	if (index >= 8)
-		index = 8;
+	if (this->index > 7)
+		index = 8; 
 	else
 		index = this->index % 8;
 	std::cout << std::endl << "·-------------------------------------------·" << std::endl;
@@ -143,8 +149,10 @@ void	PhoneBook::searchContact(void)
 		if (str != "" && this->isDigit(str))
 		{
 			for (int i = 0; i < index; i++)
-				if (this->contacts[i].getIndex(std::atoi(str.c_str())))
+			{
+				if (this->contacts[i].getIndex(i + 1) == std::atoi(str.c_str()))
 					c = this->getContact(i);
+			}
 		}
 		if (!this->isDigit(str) || !c.getIndex(std::atoi(str.c_str())))
 		{
@@ -180,5 +188,5 @@ bool	PhoneBook::isDigit(std::string str)
 
 Contact	PhoneBook::getContact(int index)
 {
-	return this->contacts[index];
+	return this->contacts[index % 8];
 }
